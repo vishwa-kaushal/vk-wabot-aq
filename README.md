@@ -1,4 +1,4 @@
-# wabot-aq
+# vk-wabot-aq
 
 Simple WhatsApp Bot 
 Still updating language - English 
