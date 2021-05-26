@@ -85,8 +85,16 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     conn.menu = conn.menu ? conn.menu : {}
     let before = conn.menu.before || `
 ╭─「 ${conn.user.name} 」Welcome 
-│ Hai, %name!
-│
+│ Hi, %name!
+|       
+|      🟢🟢🟢     🟢🟢    🟢🟢🟢🟢
+|      🟢   🟢   🟢  🟢      🟢
+|      🟢   🟢  🟢    🟢     🟢
+|      🟢🟢🟢   🟢    🟢     🟢
+|      🟢   🟢  🟢    🟢     🟢
+|      🟢   🟢   🟢  🟢      🟢
+|      🟢🟢🟢     🟢🟢       🟢 
+|
 │ Remaining *%limit Limit*
 │ Level *%level (%exp / %maxexp)* [%xp4levelup lagi untuk levelup]
 │ %totalexp XP in Total
