@@ -40,7 +40,7 @@ if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp' + (3 + /2$/.test(comm
 *Server y2mate:* ${usedServer}
 `.trim(), m, false, _thumb || {})
 }
-handler.help = ['play', 'play2'].map(v => v + ' <pencarian>')
+handler.help = ['play', 'play2'].map(v => v + ' <search>')
 handler.tags = ['downloader']
 handler.command = /^play2?$/i
 
