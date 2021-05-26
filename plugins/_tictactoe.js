@@ -13,7 +13,7 @@ handler.before = function (m) {
     let room = Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender) && room.state == 'PLAYING')
     if (room) {
         // m.reply(`[DEBUG]\n${parseInt(m.text)}`)
-        if (!/^([1-9]|(me)?nyerah|surr?ender)$/i.test(m.text)) return !0
+        if (!/^([1-9]|(me)?give up|surr?ender)$/i.test(m.text)) return !0
         isSurrender = !/^[1-9]$/.test(m.text)
         if (m.sender !== room.game.currentTurn) { // nek wayahku
             if (!isSurrender) return !0
@@ -24,10 +24,10 @@ handler.before = function (m) {
         }))
         if (!isSurrender && 1 > (ok = room.game.turn(m.sender === room.game.playerO, parseInt(m.text) - 1))) {
             m.reply({
-                '-3': 'Game telah berakhir',
+                '-3': 'The game has ended',
                 '-2': 'Invalid',
-                '-1': 'Posisi Invalid',
-                0: 'Posisi Invalid',
+                '-1': 'Invalid Position',
+                0: 'Invalid Position',
             }[ok])
             return !0
         }
@@ -57,11 +57,11 @@ handler.before = function (m) {
 ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
 ${arr.slice(6).join('')}
-${isWin ? `@${winner.split('@')[0]} Menang! (+${winScore} XP)` : isTie ? `Game berakhir (+${playScore} XP)` : `Giliran ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}
+${isWin ? `@${winner.split('@')[0]} win! (+${winScore} XP)` : isTie ? `Game over (+${playScore} XP)` : `Turn ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}
 
 ❌: @${room.game.playerX.split('@')[0]}
 ⭕: @${room.game.playerO.split('@')[0]}
-Ketik *nyerah* untuk nyerah
+type *give up* to give up
 Room ID: ${room.id}
 `.trim()
         let users = global.DATABASE._data.users
