@@ -10,7 +10,7 @@ let handler = async (m, { conn }) => {
         })
     } catch (e) {
         console.log(e)
-        throw '_*Owner belum membayar tagihan fitur ini*_'
+        throw '_*The owner has not paid this feature bill*_'
     }
 }
 handler.help = ['wallpaperanime']
