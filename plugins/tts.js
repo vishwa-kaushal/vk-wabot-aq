@@ -22,7 +22,7 @@ handler.tags = ['tools']
 handler.command = /^g?tts$/i
 module.exports = handler
 
-function tts(text, lang = 'en') {
+function tts(text, lang = 'id') {
   console.log(lang, text)
   return new Promise((resolve, reject) => {
     try {
